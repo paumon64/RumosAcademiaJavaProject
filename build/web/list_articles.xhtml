@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <head><title>IGNORED</title></head>
+    <body>
+
+
+        <h:outputFormat>
+            <h:form>
+                <h:dataTable value="#{articlesController.getAll()}" var="articles">
+                    <h:column>
+                        <f:facet name="header">#{msg.column_Edit}</f:facet>
+                        <h:commandLink value="Edit" action="#{articlesController.edit(articles)}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{msg.column_Id}</f:facet> #{articles.idArticle}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{msg.column_Title}</f:facet> #{articles.description}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{msg.column_Category}</f:facet> #{articles.category.categoryName}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{msg.column_Employee}</f:facet> #{articles.owner.lastName}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{msg.column_SubCategory}</f:facet> #{articles.subCategory.subCategoryDescript}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{msg.column_Inventory}</f:facet> #{articles.inventory}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header"> #{msg.column_Price}</f:facet> #{articles.price}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{msg.btn_delete}</f:facet>
+                        <h:commandLink value="Delete" action="#{articlesController.delete(article)}"/>
+                    </h:column>
+                </h:dataTable>
+                <br/>
+<!--                <h:commandLink value="Add" action="addArticle"/>-->
+                <br/>
+                <h:commandButton value="Index" action="index"/>
+            </h:form>
+        </h:outputFormat>
+
+    </body>
+</html>
+

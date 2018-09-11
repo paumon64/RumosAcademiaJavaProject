@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xlmns="http://java.sun.com/jsf.core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>My Library</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h2>Articles: Add</h2>
+        <h:form>
+            <h:panelGrid columns="2">
+
+                Description: <h:inputText id="description" value="#{articlesBean.description}"/>
+                Inventory: <h:inputText id="inventory" value="#{articlesBean.inventory}"/>
+                Price: <h:inputText id="price" value="#{articlesBean.price}"/>
+                Owner:<h:inputText id="owner" value="#{articlesBean.owner}"/>
+            
+
+                Category: <h:inputText id="category" value="#{articlesBean.category}"/>                    
+                Subcategory: <h:inputText id="subcategory" value="#{articlesBean.subcategory}" />
+
+            </h:panelGrid>
+            <h:commandButton value="Add article" action="#{articlesController.add()}"/>
+        </h:form>
+    </body>
+</html>
+
+

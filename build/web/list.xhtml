@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xlmns="http://java.sun.com/jsf.core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:loadBundle basename="com.mmlibrary.resources.messages" var="msg"/>
+    <h:head>
+        <title>List of tables</title>
+    </h:head>
+    <h:body>
+               <h:form>
+            <h:commandLink value="List articles" action="list_articles"/>
+            <p/>
+            <h:commandLink value="List categories" action="index"/>
+            <p/>
+            <h:commandLink value="List subcategories" action="index"/>
+            <p/>
+            <h:commandLink value="List employees" action="list_employees"/>
+            <p/>
+            <h:commandLink value="Back" action="index"/>
+        </h:form>
+    </h:body>
+</html>
+
