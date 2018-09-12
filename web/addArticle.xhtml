@@ -10,15 +10,14 @@
     </head>
     <body>
         <h2>Articles: Add</h2>
+        Id : <h:outputText  value="#{articlesController.count()+1}"/>
         <h:form>
             <h:panelGrid columns="2">
-
+                
                 Description: <h:inputText id="description" value="#{articlesBean.description}"/>
                 Inventory: <h:inputText id="inventory" value="#{articlesBean.inventory}"/>
                 Price: <h:inputText id="price" value="#{articlesBean.price}"/>
                 Owner:<h:inputText id="owner" value="#{articlesBean.owner}"/>
-            
-
                 Category: <h:inputText id="category" value="#{articlesBean.category}"/>                    
                 Subcategory: <h:inputText id="subcategory" value="#{articlesBean.subcategory}" />
 

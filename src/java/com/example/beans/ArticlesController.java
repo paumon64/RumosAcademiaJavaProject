@@ -7,6 +7,12 @@ package com.example.beans;
 
 import com.example.ejb.ArticlesFacade;
 import com.example.entities.Articles;
+import static com.example.entities.Articles_.category;
+import static com.example.entities.Articles_.owner;
+import static com.example.entities.Articles_.subCategory;
+import com.example.entities.Category;
+import com.example.entities.Employees;
+import com.example.entities.Subcategory;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
@@ -61,8 +67,11 @@ public class ArticlesController implements Serializable {
         y.setDescription(articleBean.getDescription());
         y.setInventory(articleBean.getInventory());
         y.setPrice(articleBean.getPrice());
+       // y.setOwner(articleBean.getOwner());
+        
 //        y.setCategory(articleBean.getCategory());
 //        y.setSubCategory(articleBean.getSubcategory());
+
 
         articlesFacade.create(y);
 
@@ -78,18 +87,17 @@ public class ArticlesController implements Serializable {
         return "update";
     }
 
-    public String save(){
-        
-       Articles i = new Articles(articleBean.getIdArticle());
-       
-       i.setDescription(articleBean.getDescription());
-       i.setInventory(articleBean.getIdArticle());
-       i.setPrice(articleBean.getPrice());
+    public String save() {
 
-       articlesFacade.edit(i);
-       
-       return "index";
-       
+        Articles i = new Articles(articleBean.getIdArticle());
 
-   }
+        i.setDescription(articleBean.getDescription());
+        i.setInventory(articleBean.getIdArticle());
+        i.setPrice(articleBean.getPrice());
+
+        articlesFacade.edit(i);
+
+        return "index";
+
+    }
 }
