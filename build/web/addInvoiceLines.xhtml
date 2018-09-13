@@ -14,9 +14,8 @@
                     <f:selectItems value="#{articlesBean.articleList}" />
                 </h:selectOneMenu>
             </h:panelGrid>  
-            Article ID <h:inputText id="articleID" value=" "/> 
+            Article ID <h:outputText id="articleID" value="#{articlesBean.description}"/> 
             Article Quantity <h:inputText id="quantity" value="#{invoiceLines.quantity}"/> 
-            </h:panelGrid>
         </h:form>
         <h:form>
             <h:commandButton value="Index" action="index"/>
