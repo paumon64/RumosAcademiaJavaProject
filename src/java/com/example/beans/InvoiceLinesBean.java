@@ -15,13 +15,14 @@ import java.io.Serializable;
  */
 @Named(value = "invoiceLines")
 @SessionScoped
-public class InvoiceLines implements Serializable {
+public class InvoiceLinesBean implements Serializable {
 
     /**
-     * Creates a new instance of InvoiceLines
+     * Creates a new instance of InvoiceLinesBean
      */
-    
-  
+    public InvoiceLinesBean() {
+    }
+      
     private int quantity;
 
     public int getQuantity() {
@@ -31,7 +32,5 @@ public class InvoiceLines implements Serializable {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-            
-    public InvoiceLines() {
-    }
+
 }

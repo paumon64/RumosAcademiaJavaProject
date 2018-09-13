@@ -5,10 +5,14 @@
  */
 package com.example.beans;
 
+import com.example.ejb.ArticlesFacade;
+import com.example.entities.Articles;
+import com.example.entities.InvoiceLines;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.model.SelectItem;
 import javax.inject.Named;
@@ -22,6 +26,9 @@ import javax.inject.Named;
 @SessionScoped
 
 public class ArticlesBean implements Serializable {
+    
+        @EJB
+    ArticlesFacade articlesFacade;
     
     private int idArticle;
     private String description;
@@ -88,18 +95,18 @@ public class ArticlesBean implements Serializable {
         this.price = price;
     }
     
-//        public ArrayList getArticleList() {
-//        if (articleList == null) {
-//            articleList = new ArrayList<String>();
-//            List freshArticle = itembean.getArticle();
-//            Iterator g = freshArticle.iterator();
-//            while (g.hasNext()) {
-//                String item = (String) g.next();
-//                SelectItem n = new SelectItem(item, item);
-//                articleList.add(n);
-//            }
-//        }
-//        return articleList;
+       public ArrayList getArticleList() {
+        if (articleList == null) {
+            articleList = new ArrayList<String>();
+            List freshArticle = articlesFacade.findAll();
+           Iterator g = freshArticle.iterator();
+           while (g.hasNext()) {
+                Articles item = (Articles) g.next();
+              //  SelectItem n = new SelectItem(item, item);
+               articleList.add(item.getDescription());
+            }
+       }
+        return articleList;
     
-    
+   } 
 }

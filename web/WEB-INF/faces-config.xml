@@ -16,7 +16,7 @@
         <base-name>com.mmlibrary.resources</base-name>
         <var>msg</var>
     </resource-bundle>
-    <!--
+    
     <navigation-rule>
         <from-view-id>/*</from-view-id>
         <navigation-case>
@@ -44,5 +44,5 @@
         </navigation-case>
 
     </navigation-rule>
-    -->
+   
 </faces-config>
