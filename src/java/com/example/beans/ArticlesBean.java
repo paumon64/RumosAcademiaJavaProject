@@ -6,7 +6,11 @@
 package com.example.beans;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.model.SelectItem;
 import javax.inject.Named;
 
 /**
@@ -26,6 +30,7 @@ public class ArticlesBean implements Serializable {
     private String owner;
     private int inventory;
     private double price;
+    private ArrayList articleList = null;
 
     public int getIdArticle() {
         return idArticle;
@@ -83,6 +88,18 @@ public class ArticlesBean implements Serializable {
         this.price = price;
     }
     
+//        public ArrayList getArticleList() {
+//        if (articleList == null) {
+//            articleList = new ArrayList<String>();
+//            List freshArticle = itembean.getArticle();
+//            Iterator g = freshArticle.iterator();
+//            while (g.hasNext()) {
+//                String item = (String) g.next();
+//                SelectItem n = new SelectItem(item, item);
+//                articleList.add(n);
+//            }
+//        }
+//        return articleList;
     
     
 }
