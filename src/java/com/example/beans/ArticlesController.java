@@ -7,12 +7,6 @@ package com.example.beans;
 
 import com.example.ejb.ArticlesFacade;
 import com.example.entities.Articles;
-import static com.example.entities.Articles_.category;
-import static com.example.entities.Articles_.owner;
-import static com.example.entities.Articles_.subCategory;
-import com.example.entities.Category;
-import com.example.entities.Employees;
-import com.example.entities.Subcategory;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
