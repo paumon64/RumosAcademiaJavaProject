@@ -32,7 +32,7 @@ public class InvoiceLinesController implements Serializable {
     InvoiceLinesBean invoiceLinesBean;
     
     @Inject
-    ArticlesBean ArticlesBean;
+    ArticlesBean articlesBean;
     
     /**
      * Creates a new instance of EmployeesController
@@ -64,7 +64,7 @@ public class InvoiceLinesController implements Serializable {
         InvoiceLines y = new InvoiceLines();
         
        // y.setIdLine(Integer.SIZE);
-        y.setIdArticle(invoiceLinesBean.getIdArticle());
+       // y.setIdArticle(invoiceLinesBean.getIdArticle().articlesBean.getCategory());
         y.setQuantity(invoiceLinesBean.getQuantity());
         
 //        y.setFirstName(employeesBean.getFirstName());
