@@ -3,14 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/RumosAcademiaJavaProject/src/java/com/example/entities/Category.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/RumosAcademiaJavaProject/src/java/com/example/ejb/ArticlesFacade.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/RumosAcademiaJavaProject/src/java/com/example/entities/AbstractFacade.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/RumosAcademiaJavaProject/src/java/com/example/beans/InvoiceLinesController.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/RumosAcademiaJavaProject/src/java/com/example/entities/invoiceLines.java</file>
             <file>file:/C:/Users/PC/Documents/NetBeansProjects/RumosAcademiaJavaProject/src/java/com/example/entities/Articles.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/RumosAcademiaJavaProject/src/java/com/example/entities/Employees.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/RumosAcademiaJavaProject/src/java/com/example/beans/InvoiceLinesBean.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/RumosAcademiaJavaProject/src/java/com/example/ejb/InvoiceLinesFacade.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/RumosAcademiaJavaProject/src/java/com/example/ejb/AbstractFacade.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/RumosAcademiaJavaProject/src/java/com/example/beans/ArticlesBean.java</file>
         </group>
     </open-files>
 </project-private>
