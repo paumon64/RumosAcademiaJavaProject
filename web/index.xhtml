@@ -10,8 +10,15 @@
     </h:head>
     <h:body>
         <h2>#{msg.appName}:#{msg.title_home}</h2>
+        <br/>
+        Article Description <h:outputText id="articleDescritption" /> 
+        <br/>
+         Article qt <h:outputFormat value="quantity"/>
+         <br/>
+       
 
         <h:outputFormat value="#{msg.welcome}">
+            
             
             <f:param value="#{empty login.username ? 'Guest' : login.username}"/>
         </h:outputFormat>

@@ -19,19 +19,23 @@
     
     <navigation-rule>
         <from-view-id>/*</from-view-id>
-        <navigation-case>
+<!--        <navigation-case>
             <from-outcome>add</from-outcome>
             <if>#{empty login.username}</if>
             <to-view-id>/login.xhtml</to-view-id>
-        </navigation-case>
+        </navigation-case>-->
         <navigation-case>
             <from-outcome>add</from-outcome>
             <to-view-id>/add.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>add</from-outcome>
+            <to-view-id>/list_invoiceLines.xhtml</to-view-id>
+        </navigation-case>
 
     </navigation-rule>
     
-       <navigation-rule>
+    <navigation-rule>
         <from-view-id>/add.xtml</from-view-id>
         <navigation-case>
             <from-outcome>addCategories</from-outcome>

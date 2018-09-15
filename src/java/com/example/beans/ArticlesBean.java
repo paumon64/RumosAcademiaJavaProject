@@ -50,7 +50,10 @@ public class ArticlesBean implements Serializable {
     public String getDescription() {
         return description;
     }
-
+    
+    public String getDescription(int idArticle) {
+        return description;
+    }
     public void setDescription(String description) {
         this.description = description;
     }

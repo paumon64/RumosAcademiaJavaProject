@@ -6,41 +6,35 @@
 package com.example.beans;
 
 import com.example.ejb.InvoiceLinesFacade;
-import com.example.ejb.exceptions.NonexistentEntityException;
-import com.example.ejb.exceptions.RollbackFailureException;
 import com.example.entities.InvoiceLines;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Query;
-import javax.persistence.EntityNotFoundException;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
-import javax.transaction.UserTransaction;
+import javax.inject.Named;
 
 /**
  *
  * @author paumon64
  */
+@Named(value = "invoiceLinesController")
+@SessionScoped
+
 public class InvoiceLinesController implements Serializable {
 
-  
     @EJB
     InvoiceLinesFacade invoiceLinesFacade;
 
     @Inject
     InvoiceLinesBean invoiceLinesBean;
-    
+
     /**
-     * Creates a new instance of EmployeesController
+     * Creates a new instance of InvoiceLinesController
      */
-    
     public InvoiceLinesController() {
     }
-    
+
     public List<InvoiceLines> getAll() {
 
         return invoiceLinesFacade.findAll();
@@ -51,6 +45,26 @@ public class InvoiceLinesController implements Serializable {
         return invoiceLinesFacade.count();
     }
 
+    public String add() {
+
+        InvoiceLines y = new InvoiceLines();
+        y.setIdLine(Integer.SIZE);
+        y.setIdArticle(invoiceLinesBean.getIdArticle());
+        invoiceLinesFacade.create(y);
+        return "list_invoiceLines";
+    }
+
+    public String add(String description) {
+
+        InvoiceLines y = new InvoiceLines();
+        //y.setId(Integer.SIZE);
+        y.setQuantity(invoiceLinesBean.getQuantity());
+        //   y.getIdArticle(invoiceLinesBean.getIdArticle());
+
+        invoiceLinesFacade.create(y);
+        return "index";
+    }
+
     public String delete(InvoiceLines x) {
 
         invoiceLinesFacade.remove(x);
@@ -59,4 +73,3 @@ public class InvoiceLinesController implements Serializable {
 
     }
 }
-
