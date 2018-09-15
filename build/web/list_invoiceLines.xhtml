@@ -16,16 +16,12 @@
         <h:form>
             <h:outputFormat>
                 <h:dataTable value="#{invoiceLinesController.getAll()}" var="invoicesLines">
-                    <h:column>
-                        <f:facet name="header">#{msg.description}</f:facet> #{articlesBean.getDescription(invoicesLines.idArticle)}
-                        
-                    </h:column>
-                    <h:column>
-                 <!--       <f:facet name="header">item</f:facet> #{""} -->
-                    </h:column>
-                    <h:column>
-<!--                        <f:facet name="header">#{msg.column_Title}</f:facet> #{invoicesLines.idArticle} -->
                    
+                    <h:column>
+                        <f:facet name="header">#{msg.column_Title}</f:facet> #{invoicesLines.idInvoice} 
+                    </h:column>
+                    <h:column>
+                      <f:facet name="header">#{msg.column_Title}</f:facet> #{invoicesLines.idArticle} 
                     </h:column>
                     <h:column>
                         <f:facet name="header">#{msg.column_Quantity}</f:facet> #{invoicesLines.quantity}
