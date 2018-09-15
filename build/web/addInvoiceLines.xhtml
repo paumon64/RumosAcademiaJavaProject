@@ -13,13 +13,12 @@
                 <h:selectOneMenu id="article" value="#{articlesBean.description}" required="true">
                     <f:selectItems value="#{articlesBean.articleList}" />
                 </h:selectOneMenu>
-            <br/>
-            
-            Article Id <h:inputText id="idArticle" value="#{invoiceLines.idArticle}"/>
-            <br/>
-            Article Quantity <h:inputText id="quantity" value="#{invoiceLines.quantity}"/>
-            <br/>
-            </h:panelGrid> 
+                <br/>
+                    Article Id <h:inputText id="idArticle" value="#{invoiceLines.idArticle}"/>
+                    <br/>
+                    Article Quantity <h:inputText id="quantity" value="#{invoiceLines.quantity}"/>
+                    <br/>
+                </h:panelGrid> 
         </h:form>
         <h:form>
             <h:commandButton value="Index" action="#{invoiceLinesController.add()}"/>

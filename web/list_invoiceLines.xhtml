@@ -10,22 +10,24 @@
     </h:head>
     <h:body>
 
-        <h3>List of invoice lines</h3>
+        <h3>Total of invoice lines :#{invoiceLinesController.count()}</h3>
         <h:outputText value="#{articlesBean.description}">
         </h:outputText>
         <h:form>
             <h:outputFormat>
                 <h:dataTable value="#{invoiceLinesController.getAll()}" var="invoicesLines">
-                   
+                    <h:column>
+                        <f:facet name="header">idLine</f:facet> #{invoicesLines.idLine} 
+                    </h:column>
+
                     <h:column>
                         <f:facet name="header">#{msg.column_Title}</f:facet> #{invoicesLines.idInvoice} 
                     </h:column>
                     <h:column>
-                      <f:facet name="header">#{msg.column_Title}</f:facet> #{invoicesLines.idArticle} 
+                        <f:facet name="header">#{msg.column_Title}</f:facet> #{invoicesLines.idArticle} 
                     </h:column>
                     <h:column>
                         <f:facet name="header">#{msg.column_Quantity}</f:facet> #{invoicesLines.quantity}
-
                     </h:column>
                 </h:dataTable>
             </h:outputFormat>
