@@ -50,6 +50,7 @@ public class InvoiceLinesController implements Serializable {
         InvoiceLines y = new InvoiceLines();
         y.setIdLine(Integer.SIZE);
         y.setIdArticle(invoiceLinesBean.getIdArticle());
+        y.setQuantity(invoiceLinesBean.getQuantity());
         invoiceLinesFacade.create(y);
         return "list_invoiceLines";
     }

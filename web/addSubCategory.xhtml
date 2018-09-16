@@ -13,15 +13,17 @@
         <h:form>
             <h:panelGrid columns="2">
 
-                #{msg.column_Category}: <h:inputText id="subCategory" value="#{subCategories.subCategoryName}"/>
+                subCategory: <h:inputText id="subCategory" value="#{subCategoryBean.subCategoryName}"/>
+                <br/>
+                idCategory: <h:inputText id="Category" value="#{subCategoryBean.categoryId}"/>
               
             </h:panelGrid>
             <br/>
-            <h:commandButton value="Add Subcategory" action="#{subCategoriesController.add()}"/>
+            <h:commandButton value="Add Subcategory" action="#{subCategoryController.add()}"/>
         </h:form>
             <br/>
             <h:form>
-              <h:commandButton value="Index" action="index"/>
+              <h:commandButton value="Index" action="list_subCategories"/>
         </h:form>
     </h:body>
 </html>

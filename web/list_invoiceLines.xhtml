@@ -6,23 +6,29 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <f:loadBundle basename="com.mmlibrary.resources.messages" var="msg"/>
     <h:head>
-        <title>List of invoice lines</title>
+        <title>List of invoice lines </title>
     </h:head>
     <h:body>
 
         <h3>List of invoice lines</h3>
         <h:form>
             <h:outputFormat>
-                <h:dataTable value="#{invoiceLinesController.getAll()}" var="invoicesLines">
+                <h:dataTable value="#{invoiceLinesController.getAll()}" var="invoiceslines">
                     <h:column>
                       <!--  <f:facet name="header">#{msg.description}</f:facet> #{articlesBean.getDescription(invoiceLines.idArticle)}
                         -->
                     </h:column>
                     <h:column>
-                        <f:facet name="header">#{msg.column_Description}</f:facet> #{invoiceLines.idArticle}
+                        <f:facet name="header">invoice number</f:facet> #{invoiceslines.idLine}
                     </h:column>
                     <h:column>
-                        <f:facet name="header">#{msg.column_Quantity}</f:facet> #{invoiceLines.quantity}
+                        <f:facet name="header">invoice number</f:facet> #{invoiceslines.idInvoice}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">idarticle</f:facet> #{invoiceslines.idArticle}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">quantity</f:facet> #{invoiceslines.quantity}
                     </h:column>
                 </h:dataTable>
             </h:outputFormat>

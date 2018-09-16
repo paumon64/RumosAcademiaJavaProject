@@ -13,7 +13,7 @@ import javax.enterprise.context.SessionScoped;
  *
  * @author paumon64
  */
-@Named(value = "SubCategory")
+@Named(value = "subCategoryBean")
 @SessionScoped
 
 public class SubCategoryBean implements Serializable {
@@ -26,6 +26,14 @@ public class SubCategoryBean implements Serializable {
     private String subCategoryName;
     private int categoryId;
 
+    public int getSubCategoryId() {
+        return subCategoryId;
+    }
+
+    public void setSubCategoryId(int subCategoryId) {
+        this.subCategoryId = subCategoryId;
+    }
+
     public String getSubCategoryName() {
         return subCategoryName;
     }
@@ -33,24 +41,14 @@ public class SubCategoryBean implements Serializable {
     public void setSubCategoryName(String subCategoryName) {
         this.subCategoryName = subCategoryName;
     }
-   
-    public SubCategoryBean() {
-    }
 
-    public int getSubCategoryId() {
-        return subCategoryId;
+    public int getCategoryId() {
+        return categoryId;
     }
 
     public void setCategoryId(int categoryId) {
-        this.subCategoryId = subCategoryId;
+        this.categoryId = categoryId;
     }
 
-    public String getCategoryName() {
-        return subCategoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
-        this.subCategoryName = subCategoryName;
-    }
     
 }

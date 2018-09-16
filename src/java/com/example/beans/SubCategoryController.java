@@ -21,7 +21,7 @@ import javax.inject.Named;
  */
 
 
-@Named(value = "SubcategoryController")
+@Named(value = "subCategoryController")
 @SessionScoped
 
 
@@ -31,7 +31,7 @@ public class SubCategoryController implements Serializable{
     SubcategoryFacade SubcategoryFacade;
 
     @Inject
-    CategoriesBean SubcategoryBean;
+    SubCategoryBean subCategoryBean;
 
     
         public List<Subcategory> getAll() {
@@ -56,7 +56,8 @@ public class SubCategoryController implements Serializable{
 
         Subcategory y = new Subcategory();
         y.setIdSubCategory(Integer.SIZE);
-        y.setSubCategoryName(SubcategoryBean.getCategoryName());
+        y.setSubCategoryDescript(subCategoryBean.getSubCategoryName());
+       // y.setSubCategoryName(subCategoryBean.getCategoryName());
 
 //        y.setCategory(articleBean.getCategory());
 //        y.setSubCategory(articleBean.getSubcategory());
@@ -68,15 +69,15 @@ public class SubCategoryController implements Serializable{
 
     public String edit(Subcategory i) {
         
-        SubCategoryBean.setSubCategoryId(i.getIdSubCategory());
-        SubCategoryBean.setSubCategoryName(i.getSubCategoryName());
+        subCategoryBean.setSubCategoryId(i.getIdSubCategory());
+        subCategoryBean.setSubCategoryName(i.getSubCategoryDescript());
         return "update";
     }
 
     public String save(){
         
       Subcategory i = new Subcategory(subCategoryBean.getSubCategoryId());
-      i.setCategoryName(subCategoryBean.getSubCategoryName());
+      i.setSubCategoryDescript(subCategoryBean.getSubCategoryName());
      
        SubcategoryFacade.edit(i);
        
