@@ -7,15 +7,14 @@ package com.example.beans;
 
 import com.example.ejb.ArticlesFacade;
 import com.example.entities.Articles;
-import com.example.entities.InvoiceLines;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
-import javax.faces.model.SelectItem;
 import javax.inject.Named;
+
 
 /**
  *

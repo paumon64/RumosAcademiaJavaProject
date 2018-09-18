@@ -10,16 +10,15 @@
         <h2>Sales order : Adding articles</h2>
         <h:form>
             <h:panelGrid columns="2">
-                <!--                #{msg.column_article}
-                                <h:selectOneMenu id="article" value="#{articlesBean.description}" required="true">
-                                    <f:selectItems value="#{articlesBean.articleList}" />
-                                </h:selectOneMenu>
-                            </h:panelGrid>  -->
-
-                Article Id <h:inputText id="idArticle" value="#{invoiceLines.idArticle}"/>
+                #{msg.column_article}
+                <h:selectOneMenu id="article" value="#{articlesBean.description}" required="true">
+                    <f:selectItems value="#{articlesBean.articleList}" />
+                </h:selectOneMenu>
                 <br/>
-                Article Quantity <h:inputText id="quantity" value="#{invoiceLines.quantity}"/>
-                <br/>
+                    Article Id <h:inputText id="idArticle" value="#{invoiceLines.idArticle}"/>
+                    <br/>
+                    Article Quantity <h:inputText id="quantity" value="#{invoiceLines.quantity}"/>
+                    <br/>
                 </h:panelGrid> 
         </h:form>
         <h:form>

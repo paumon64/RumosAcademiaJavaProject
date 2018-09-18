@@ -6,13 +6,14 @@
 package com.example.beans;
 
 import com.example.ejb.InvoiceLinesFacade;
+import com.example.entities.Employees;
 import com.example.entities.InvoiceLines;
+import javax.inject.Named;
+import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
-import javax.inject.Named;
 
 /**
  *
@@ -29,8 +30,11 @@ public class InvoiceLinesController implements Serializable {
     @Inject
     InvoiceLinesBean invoiceLinesBean;
 
+    @Inject
+    ArticlesBean articlesBean;
+
     /**
-     * Creates a new instance of InvoiceLinesController
+     * Creates a new instance of EmployeesController
      */
     public InvoiceLinesController() {
     }
@@ -45,8 +49,14 @@ public class InvoiceLinesController implements Serializable {
         return invoiceLinesFacade.count();
     }
 
-    public String add() {
+    public String delete(InvoiceLines x) {
 
+        invoiceLinesFacade.remove(x);
+
+        return null;
+    }
+    
+    public String add() {
         InvoiceLines y = new InvoiceLines();
         y.setIdLine(Integer.SIZE);
         y.setIdArticle(invoiceLinesBean.getIdArticle());
@@ -55,22 +65,23 @@ public class InvoiceLinesController implements Serializable {
         return "list_invoiceLines";
     }
 
-    public String add(String description) {
+    public String edit(InvoiceLines i) {
+//        employeesBean.setIdEmployee(i.getIdEmployee());
+//        employeesBean.setFirstName(i.getFirstName());
+//        employeesBean.setLastName(i.getLastName());
+//        employeesBean.setPosition(i.getPosition());
 
-        InvoiceLines y = new InvoiceLines();
-        //y.setId(Integer.SIZE);
-        y.setQuantity(invoiceLinesBean.getQuantity());
-        //   y.getIdArticle(invoiceLinesBean.getIdArticle());
-
-        invoiceLinesFacade.create(y);
-        return "index";
+        return "list_invoiceLines";
     }
 
-    public String delete(InvoiceLines x) {
+    public String save() {
 
-        invoiceLinesFacade.remove(x);
-
-        return null;
+        //Employees i = new Employees(invoiceLinesBean.getIdEmployee());
+//       i.setFirstName(employeesBean.getFirstName());
+//       i.setLastName(employeesBean.getLastName());
+//       i.setPosition(employeesBean.getPosition());
+        //invoiceLinesFacade.edit(i);
+        return "list_invoiceLines";
 
     }
 }
